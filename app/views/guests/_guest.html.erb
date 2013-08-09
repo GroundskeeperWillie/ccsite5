@@ -1,0 +1,12 @@
+	<tr>
+		<td><span class="content"><%= guest.name %></span></td>
+		<td><span class="content">RSVP</span></td>
+		<td><span class="content"><%= guest.diet %></span></td>
+		<td></td>
+		<td></td>
+		<td><% if current_user?(guest.user) %>
+		    <%= link_to "delete", guest, method: :delete,
+		                                     data: { confirm: "You sure?" },
+		                                     title: guest.name %>
+		  <% end %></td>
+	</tr>

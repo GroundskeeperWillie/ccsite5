@@ -1,0 +1,23 @@
+<% provide(:title, 'Home')%>
+<% if signed_in? %>
+<h2>Carla Aumann and Christopher Stewart</h2>
+<h4>cordially invite</h4>
+  <div class="row">
+		<section>
+		  <%= render 'shared/user_info' %>
+		 </section>
+    <div class="row">
+      	  <%= render 'shared/feed' %>
+    </div>
+	<div>
+	  <%= render 'shared/guest_form' %>
+	</div>
+	<span>
+	  <%= link_to "Change my account details", edit_user_path(current_user) %>
+	</span>
+  </div>
+<% else %>
+  <div class="center hero-unit">
+	<p>If you're here for the wedding details please enter the <%= link_to "secret password...", signin_path %></p>
+  </div>
+<% end %> 

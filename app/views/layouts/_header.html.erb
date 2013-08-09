@@ -1,0 +1,54 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "Carla and Chris 2014", root_path, :id => "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+ 		  <li><%= link_to "Home", home_path %></li>
+		  <% if signed_in? %>
+			<li><%= link_to "RSVP", home_path %></li>
+			<li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Details <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Wedding details", details_path %></li>
+                <li><%= link_to "Getting there", directions_path %></li>
+				<li><%= link_to "Accommodation", accomodation_path %></li>
+              </ul>
+            </li>  
+			<li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Administration <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Guest List", '#' %></li>
+				<li><%= link_to "Registry", '#' %></li>
+			  </ul>
+		    </li>
+			<li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+				<li><%= link_to "RSVP", home_path %></li>
+                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                </li>
+              </ul>
+              </li>
+          <% else %>
+            <li><%= link_to "Sign in", signin_path %></li>
+          <% end %>
+		 
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+

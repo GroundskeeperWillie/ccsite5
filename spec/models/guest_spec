@@ -1,0 +1,15 @@
+require 'spec_helper'
+
+describe Guest do
+
+  let(:user) { FactoryGirl.create(:user) }
+  before do
+    # This code is wrong!
+    @guest = Guest.new(name: "Lorem ipsum", user_id: user.id)
+  end
+
+  subject { @guest }
+
+  it { should respond_to(:name) }
+  it { should respond_to(:user_id) }
+end

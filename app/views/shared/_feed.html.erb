@@ -1,0 +1,9 @@
+<p>
+Kindly RSVP by checking the appropriate box below.  If you'll be joining us, please also indicate if you'll also be attending the <%= link_to "Sunday brunch", details_path %>, if you'd be interested in sharing a bus to Melbourne, and if you have any dietary requirements that we should be aware of.</br>
+</p>
+<% if @feed_items.any? %>
+  <table class="content">
+    <%= render partial: 'shared/feed_item', collection: @feed_items %>
+  </table>
+  <%= will_paginate @feed_items %>
+<% end %>

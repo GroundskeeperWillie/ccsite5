@@ -1,0 +1,14 @@
+<%= form_for(@guest) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+	<tr>
+      <td><%= f.text_field :name, placeholder: "Change name" %></td>
+	  <td><%= f.text_area :diet, placeholder: "Change dietary requirements" %></td>
+	  <td><%= f.check_box :bus, placeholder: "Catching the bus?"%></td>
+	  <td><%= f.check_box :rsvp, placeholder: "Coming along to the shindig?"%></td>
+	  <td><%= f.check_box :brunch, placeholder: "Coming to brunch on Sunday?"%></td>
+	  <td><%= f.submit "Update"%></td>
+	</tr>
+  </div>
+<% end %>
+<p>

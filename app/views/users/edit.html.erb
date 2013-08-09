@@ -1,0 +1,26 @@
+<% provide(:title, "Edit user") %> 
+<h1>Update Your Details</h1>
+<% if signed_in? %>
+  <div class="row">
+  <div class="span6 offset3">	
+    <h3>Account Settings</h3>
+  	  <%= form_for(@user) do |f| %>
+ 	  <%= render 'shared/error_messages', object: f.object %>
+	  <%= f.label :party %>
+	  <%= f.text_field :name %>	
+      <%= f.label :email %>
+	  <%= f.text_field :email %>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.password_field :password_confirmation %>
+	  <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+	<% end %>
+	</div>
+  <% else %>
+    <div class="center hero-unit">
+    <p>If you're here for the wedding details please enter the <a link_to "secret password...", signin_path /a></p>
+    </div>	
+   <% end %>
+  </div>
+</div>

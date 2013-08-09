@@ -1,0 +1,37 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>	
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="span8">
+    <% if @user.guests.any? %>
+      <h3>Guests (<%= @user.guests.count %>)</h3>
+      <ol class="guests">
+		<table id="guesttable">  
+		  <col width="150" text="align-left">
+		  <col width="25">
+		  <col width="200">
+		  <tr>
+		    <th align="left">Guest</th>
+		    <th align="left">Response</th>
+			<th align="left">Dietary Restrictions</th>
+			<th>Brunch?</th>
+			<th>Bus?</th>
+			<th>Delete</th>
+		  </tr>
+        	<%= render @guests %>
+			
+      </ol>
+      <%= will_paginate @guests %>
+	  </table>	
+    <% end %>
+  </div>
+</div>
+<div>
+ <p><%= link_to "Edit guest details", home_path %>, or update your <%= link_to "account settings", edit_user_path(current_user) %></p>
+</div>
+
