@@ -1,7 +1,8 @@
 <% provide(:title, 'Home')%>
 <% if signed_in? %>
+<div class="jennasue">
 <h1>Carla and Chris' Wedding</h1>
-<h2>4th January 2014</h2>
+<h2>Saturday 4th January 2014</h2>
 <h4>Beautiful bride</br>
   Handsome groom</br>
   Booze, food, and bad dance moves ... </br>
@@ -11,6 +12,8 @@
     or</br>
   <%= link_to "rsvp now", current_user %></h2>
 <% else %>
-  <h2>Carla Aumann and Christopher Stewart</h2>
+  <h2 class="jennasue">Carla Aumann and Christopher Stewart</h2>
+  <h3 class="jennasue">Saturday 4th January 2014</h3>
   <p>Please <%= link_to "sign in", signin_path %> for details....</p>
 <% end %>
+</div>

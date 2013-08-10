@@ -18,6 +18,10 @@ html {
 
 body {
   padding-top: 60px;
+  background-color: #f6f5df;
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
 }
 
 section {
@@ -81,20 +85,34 @@ p {
 
 /* header */
 
+.navbar {
+  .navbar-inner {
+    background-color: #125624;
+    background-image: none;
+    background-repeat: no-repeat;
+    filter: none;
+  }
+}
+
+.navbar .nav > li > a {
+  color: #f6f5df;
+}
+
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
   color: white;
-  text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
-  font-weight: bold;
   line-height: 1;
   &:hover {
     color: white;
     text-decoration: none;
   }
+    font-family: 'jenna_sueregular';
+    font-size: 30px;
+    color: #fdfcf6;
 }
 
 /* footer */
@@ -244,3 +262,11 @@ aside {
 .leftalign {
   text-align: left;
 }
+
+.jennasue {
+  font-family: 'jenna_sueregular';
+  font-size: 30px;
+}
+
+
+
