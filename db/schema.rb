@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130428071252) do
+ActiveRecord::Schema.define(:version => 20130810012535) do
 
   create_table "guests", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,9 @@ ActiveRecord::Schema.define(:version => 20130428071252) do
     t.string   "diet"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "wedding"
+    t.boolean  "bus"
+    t.boolean  "brunch"
   end
 
   add_index "guests", ["user_id", "created_at"], :name => "index_guests_on_user_id_and_created_at"

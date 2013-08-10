@@ -10,9 +10,11 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :guests_attributes
   has_secure_password
   has_many :guests, dependent: :destroy
+
+  accepts_nested_attributes_for :guests
     
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token

@@ -1,5 +1,5 @@
 class Guest < ActiveRecord::Base
-  attr_accessible :diet, :name
+  attr_accessible :diet, :name, :bus, :wedding, :brunch
   belongs_to :user
   
   validates :user_id, presence: true

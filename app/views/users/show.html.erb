@@ -1,37 +1,38 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="span4">
-    <section>
-      <h1>	
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-  <div class="span8">
-    <% if @user.guests.any? %>
-      <h3>Guests (<%= @user.guests.count %>)</h3>
-      <ol class="guests">
-		<table id="guesttable">  
-		  <col width="150" text="align-left">
-		  <col width="25">
-		  <col width="200">
-		  <tr>
-		    <th align="left">Guest</th>
-		    <th align="left">Response</th>
-			<th align="left">Dietary Restrictions</th>
-			<th>Brunch?</th>
-			<th>Bus?</th>
-			<th>Delete</th>
-		  </tr>
-        	<%= render @guests %>
-			
-      </ol>
-      <%= will_paginate @guests %>
-	  </table>	
+<h2><%= @user.name %> (<%= @user.guests.count %> guests)</h2>
+    <%= form_for @user do |f| %>
+      <table class="table">
+          <tr>
+            <td class="span3">Guest</td>
+            <td class="span2">Wedding</td>
+            <td class="span2">Brunch</td>
+            <td class="span2">Bus</td>
+            <td class="span3">Dietary restrictions</td>
+          </tr>
+          <%= f.fields_for :guests do |builder| %>
+          <tr>
+            <td><%= builder.text_field :name, placeholder: "Guest name" %></td>
+            <td>
+              <%= builder.radio_button :wedding, "true" %>Yes, I'm there!</br>
+              <%= builder.radio_button :wedding, "false" %>No, I'm a bad friend
+            </td>
+            <td>
+              <%= builder.radio_button :brunch, "true" %>Yes please!</br>
+              <%= builder.radio_button :brunch, "false" %>No thanks
+            </td>
+            <td>
+              <%= builder.radio_button :bus, "true" %>Yes please!</br>
+              <%= builder.radio_button :bus, "false" %>No thanks
+            </td>
+            <td><%= builder.text_field :diet, placeholder: "Dietary fussiness" %></td>
+          </tr>
+        <% end %>
+      </table>
+      <%= f.submit "update", class: "btn btn-large btn-primary"  %>
     <% end %>
   </div>
 </div>
-<div>
  <p><%= link_to "Edit guest details", home_path %>, or update your <%= link_to "account settings", edit_user_path(current_user) %></p>
 </div>
 

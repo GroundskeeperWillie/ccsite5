@@ -1,16 +1,26 @@
 <tr class="content" id="<%= feed_item.id %>">
   <%= form_for(feed_item) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <td class="textfield"><%= f.text_field :name, placeholder: "Add new guest." %></td>
-    <td><%= f.text_field :diet, placeholder: "Dietary restrictions. And other stuff." %></td>
-	<td>RSVP</td>
-	<td>Brunch</td>
-	<td>Bus</td>
-    <td><%= f.submit "Update", class: "btn btn-large btn-primary"  %></td>
+    <td class="textfield"><%= f.text_field :name, placeholder: "Update guest name" %></td>
+  	 <td>
+      <%= f.radio_button :wedding, "true" %>Yes, I'm there!</br>
+      <%= f.radio_button :wedding, "false" %>No, I'm a bad friend
+    </td>
+    <td>
+      <%= f.radio_button :brunch, "true" %>Yes please!</br>
+      <%= f.radio_button :brunch, "false" %>No thanks
+    </td>
+    <td>
+      <%= f.radio_button :bus, "true" %>Yes please!</br>
+      <%= f.radio_button :bus, "false" %>No thanks
+    </td>
+      <td><%= f.text_field :diet, placeholder: "Dietary restrictions. And other stuff." %></td>
+      <td><%= f.submit "Update", class: "btn btn-large btn-primary"  %></td>
     <td><% if current_user?(feed_item.user) %>
     <%= link_to "delete", feed_item, method: :delete,
                                      data: { confirm: "You sure?" },
                                      title: feed_item.name %>
     <% end %></td>
+
   <% end %>
 </tr>
