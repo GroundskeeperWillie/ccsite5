@@ -1,9 +1,10 @@
 <% provide(:title, "Edit user") %> 
-<h1>Update Your Details</h1>
+<h3>Update Your Details</h3>
 <% if signed_in? %>
   <div class="row">
   <div class="span6 offset3">	
-    <h3>Account Settings</h3>
+    <h2><%= @user.name %></h2>
+    <h4>Account Settings</h4>
   	  <%= form_for(@user) do |f| %>
  	  <%= render 'shared/error_messages', object: f.object %>
 	  <%= f.label :party %>

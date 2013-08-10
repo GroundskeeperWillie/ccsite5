@@ -3,13 +3,14 @@ class GuestsController < ApplicationController
   before_filter :correct_user,   only: [:destroy, :put] 
     
   def index
+    @guests = Guest.paginate(page: params[:page])
   end
   
   def create
     @guest = current_user.guests.build(params[:guest])
     if @guest.save
       flash[:success] = "Guest created!"
-      redirect_to home_path
+      redirect_to newguest_path
     else
       @feed_items = []
       render 'static_pages/home'
@@ -18,7 +19,7 @@ class GuestsController < ApplicationController
   
   def destroy
     @guest.destroy
-    redirect_to home_path
+    redirect_to newguest_path
 
   end
   

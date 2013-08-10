@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation, :guests_attributes
   has_secure_password
   has_many :guests, dependent: :destroy
+  has_one :party
 
   accepts_nested_attributes_for :guests
     
@@ -25,8 +26,8 @@ class User < ActiveRecord::Base
   validates :email, :presence => true, 
                 :format => { :with => VALID_EMAIL_REGEX },
                 :uniqueness => { :case_sensitive => false }
-  validates :password, presence: true, length: { minimum: 6 }
-  validates :password_confirmation, presence: true
+  validates :password, presence: true, length: { minimum: 6 }, on: :create
+  validates :password_confirmation, presence: true, on: :update, :unless => lambda{ |user| user.password.blank? }
   
   def feed
     Guest.where("user_id = ?", id)

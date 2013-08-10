@@ -43,6 +43,7 @@ class UsersController < ApplicationController
   end
   
   def update
+    params[:user].delete(:password) if params[:user][:password].blank?
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated"
       sign_in @user

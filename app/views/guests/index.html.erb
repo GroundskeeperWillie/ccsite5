@@ -1,0 +1,38 @@
+<h2>In total you've invited <%= @guests.count %> people:</h2>
+<table class="table">
+    <tr><h3>Attending (<%= @guests.where(wedding: true).count %>)</h3></tr>
+		<th>Guest</th>
+		<th>Brunch</th>
+		<th>Bus</th>
+		<th>Dietary Restrictions</th>
+	<% @guests.each do |f| %>
+	<% if f.wedding == true %>
+		<tr>
+		<td><%= f.name %></td>
+		<td><%= f.brunch %></td>
+		<td><%= f.bus %></td>
+		<td><%= f.diet %></td>
+	</tr>
+	<% end %>
+	<% end %>
+</table>
+<table class="table">
+    <tr><h3>Not Attending (<%= @guests.where(wedding: false).count %>)</h3></tr>
+	<% @guests.each do |f| %>
+	<tr>
+	  <% if f.wedding == false %>
+		<td><%= f.name %></td>
+	  <% end %>
+	</tr>
+	<% end %>
+</table>
+<table class="table">
+    <tr><h3>Too Bone Arse Lazy to Respond Yet (<%= @guests.where(wedding: nil).count %>)</h3></tr>
+	<% @guests.each do |f| %>
+	<tr>
+	  <% if f.wedding == nil %>
+		<td><%= f.name %></td>
+	  <% end %>
+	</tr>
+	<% end %>
+</table>

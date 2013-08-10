@@ -1,6 +1,11 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-<h2><%= @user.name %> (<%= @user.guests.count %> guests)</h2>
+<h4>Carla Aumann and Christopher Stewart cordially invite</h4>
+<h2><%= @user.name %></h2>
+<h4>A party of <%= pluralize(@user.guests.count, "guest") %></h4>
+<p>
+Kindly RSVP by checking the appropriate boxes below.  If you'll be joining us, please also indicate if you'll also be attending the <%= link_to "Sunday brunch", details_path %>, if you need the bus from ??, and if you have any dietary requirements that we should be aware of.</br>
+</p>
     <%= form_for @user do |f| %>
       <table class="table">
           <tr>
@@ -14,16 +19,15 @@
           <tr>
             <td><%= builder.text_field :name, placeholder: "Guest name" %></td>
             <td>
-              <%= builder.radio_button :wedding, "true" %>Yes, I'm there!</br>
-              <%= builder.radio_button :wedding, "false" %>No, I'm a bad friend
+              <%= builder.select :wedding,[["Woohoo! I'm there!", true],["I'm a bad friend", false]] %>
             </td>
             <td>
-              <%= builder.radio_button :brunch, "true" %>Yes please!</br>
-              <%= builder.radio_button :brunch, "false" %>No thanks
+              <%= builder.radio_button :brunch, "true" %> Yes please!</br>
+              <%= builder.radio_button :brunch, "false" %> No thanks
             </td>
             <td>
-              <%= builder.radio_button :bus, "true" %>Yes please!</br>
-              <%= builder.radio_button :bus, "false" %>No thanks
+              <%= builder.radio_button :bus, "true" %> Yes please!</br>
+              <%= builder.radio_button :bus, "false" %> No thanks
             </td>
             <td><%= builder.text_field :diet, placeholder: "Dietary fussiness" %></td>
           </tr>
@@ -33,6 +37,6 @@
     <% end %>
   </div>
 </div>
- <p><%= link_to "Edit guest details", home_path %>, or update your <%= link_to "account settings", edit_user_path(current_user) %></p>
+ <p>Check out the <%= link_to "fine print", details_path %>, or update your <%= link_to "account settings", edit_user_path(current_user) %>.</p>
 </div>
 
