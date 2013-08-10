@@ -9,8 +9,8 @@
 	<% if f.wedding == true %>
 		<tr>
 		<td><%= f.name %></td>
-		<td><%= f.brunch %></td>
-		<td><%= f.bus %></td>
+		<td><%= human_boolean(f.brunch) %></td>
+		<td><%= human_boolean(f.bus) %></td>
 		<td><%= f.diet %></td>
 	</tr>
 	<% end %>

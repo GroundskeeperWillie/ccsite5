@@ -9,4 +9,8 @@ module ApplicationHelper
       "#{base_title} | #{page_title}"
     end
   end
+
+  def human_boolean(boolean)
+  	boolean ? "Yes" : "No"
+  end
 end

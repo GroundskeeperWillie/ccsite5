@@ -19,6 +19,9 @@ Ccsite4::Application.routes.draw do
   match '/directions', :to => 'static_pages#directions'
   match '/home', :to => 'static_pages#splash'
   match '/newguest', :to => 'static_pages#home'
+  match '/attire', :to => 'static_pages#attire'
+  match '/other', :to => 'static_pages#other'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,11 +1,15 @@
 <% provide(:title, 'Home')%>
 <% if signed_in? %>
-<h2>Carla Aumann and Christopher Stewart</h2>
-<h4>cordially invite you to help celebrate the occasion of their wedding on</h4>
-<h2>Saturday, the Fourth day of January, in the year Twenty Fourteen</h2>
-  <h2><%= link_to "peruse the details", details_path %></h2>
-  <h3>or</h3>
-  <h2><%= link_to "rsvp now", current_user %></h2>
+<h1>Carla and Chris' Wedding</h1>
+<h2>4th January 2014</h2>
+<h4>Beautiful bride</br>
+  Handsome groom</br>
+  Booze, food, and bad dance moves ... </br>
+  Are you in or what?</h4>
+<p>Welcome to our wedding website where you can find all the info we otherwise</br> forgot (or will forget) to tell you, all in one convenient location.</p>
+  <h2><%= link_to "peruse the details", details_path %></br>
+    or</br>
+  <%= link_to "rsvp now", current_user %></h2>
 <% else %>
   <h2>Carla Aumann and Christopher Stewart</h2>
   <p>Please <%= link_to "sign in", signin_path %> for details....</p>

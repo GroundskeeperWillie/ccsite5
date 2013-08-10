@@ -4,7 +4,7 @@
 <h2><%= @user.name %></h2>
 <h4>A party of <%= pluralize(@user.guests.count, "guest") %></h4>
 <p>
-Kindly RSVP by checking the appropriate boxes below.  If you'll be joining us, please also indicate if you'll also be attending the <%= link_to "Sunday brunch", details_path %>, if you need the bus from ??, and if you have any dietary requirements that we should be aware of.</br>
+Kindly RSVP by checking the appropriate boxes below.  If you'll be joining us, please also indicate if you'll also be attending the <%= link_to "Sunday brunch", details_path %>, if you need the bus from <%= link_to "Quality Inn Tabcorp", accomodation_path %> in Melton, and if you have any dietary requirements that we should be aware of.</br>
 </p>
     <%= form_for @user do |f| %>
       <table class="table">
