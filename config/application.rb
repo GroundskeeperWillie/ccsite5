@@ -15,7 +15,7 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-module Ccsite5
+module Ccsite4
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -65,13 +65,13 @@ module Ccsite5
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
         # New to initialize precompile
-    config.assets.initialize_on_precompile = false
-    config.assets.compile = true
+    #config.assets.initialize_on_precompile = false
+    #config.assets.compile = true
     # Enable @font-face
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf)
     # To precompile bootstrap rather than throught the stylesheet
-    config.assets.precompile += %w( bootstrap.css )
+    #config.assets.precompile += %w( bootstrap.css )
   end
 end
