@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Ccsite4::Application.load_tasks
+Ccsite5::Application.load_tasks
