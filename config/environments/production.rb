@@ -65,6 +65,9 @@ Ccsite4::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   
+  # Precompile additional assets (application.css.scss customer.css.scss)
+  config.assets.precompile += %w( application.css.scss custom.css.scss jennasue.css.scss )
+
   # replication of boostrap precompile as in application.rb
-  config.assets.precompile += %w( bootstrap.css )
+  #config.assets.precompile += %w( bootstrap.css )
 end
