@@ -75,6 +75,6 @@ module Ccsite4
     # Precompile additional assets
     config.assets.precompile += %w( .svg .eot .woff .ttf)
     # To precompile bootstrap rather than throught the stylesheet
-    #config.assets.precompile += %w( bootstrap.css )
+    config.assets.precompile += %w( bootstrap.css )
   end
 end
