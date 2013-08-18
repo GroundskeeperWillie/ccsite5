@@ -68,8 +68,8 @@ Ccsite4::Application.configure do
   # Precompile additional assets (application.css.scss customer.css.scss)
   config.assets.precompile += %w( application.css.scss custom.css.scss jennasue.css.scss )
   
-
-  config.assets.manifest = Rails.root.join("public/assets")
+  # this didn't work
+  #config.assets.manifest = Rails.root.join("public/assets")
 
   # replication of boostrap precompile as in application.rb
   #config.assets.precompile += %w( bootstrap.css )
