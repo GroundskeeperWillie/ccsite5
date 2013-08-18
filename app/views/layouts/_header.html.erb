@@ -20,6 +20,7 @@
                 <li><%= link_to "Gifts", registry_path %></li>
               </ul>
             </li>  
+            <% if current_user.admin? %>
 			<li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Administration <b class="caret"></b>
@@ -30,6 +31,7 @@
 				<li><%= link_to "Registry", '#' %></li>
 			  </ul>
 		    </li>
+        <% end %>
 			<li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
