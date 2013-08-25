@@ -63,7 +63,7 @@ module Ccsite4
     config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
-    config.assets.enabled = false
+    config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
@@ -73,7 +73,7 @@ module Ccsite4
     # Enable @font-face
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
     # Precompile additional assets
-    config.assets.precompile += %w( .svg .eot .woff .ttf)
+    config.assets.precompile += %w( .svg .eot .woff .ttf *.js *.css *.scss)
     # To precompile bootstrap rather than throught the stylesheet
     #config.assets.precompile += %w( bootstrap.css )
   end
