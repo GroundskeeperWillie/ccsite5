@@ -7,4 +7,17 @@ class Guest < ActiveRecord::Base
   validates :diet, length: { maximum: 250}
   
   default_scope order(:name)
+
+
+
+def self.to_csv(options = {})
+  CSV.generate(options) do |csv|
+    csv << column_names
+    all.each do |guest|
+      csv << guest.attributes.values_at(*column_names)
+    end
+  end
+end
+
+
 end

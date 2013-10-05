@@ -2,6 +2,8 @@
 <h2 class="browntext">In total you've invited <%= @guests.count %> people:</h2>
 <h4 class="greentext">A total of <%= pluralize(@guests.where(wedding: nil).count, "guest") %> have not yet responded.</h4>
 <h4 class="greentext">A total of <%= pluralize(@guests.where(wedding: false).count, "guest") %> are not attending.</h4>
+<h5 class="browntext">Download the guest list: <%= link_to "CSV", guests_path(format: "csv") %> | <%= link_to "Excel", guests_path(format: "xls") %> </h5>
+
 <table class="table">
     <tr><h3 class="greentext">Attending (<%= @guests.where(wedding: true).count %>)</h3></tr>
 		<th>Guest</th>
@@ -10,14 +12,12 @@
 		<th>Dietary Restrictions</th>
 	</tr>
 	<%= will_paginate %>
-	<% @guests.each do |f| %>
-	<% if f.wedding == true %>
+	<% @guests.where(wedding: true).each do |f| %>	
 	<tr>
 		<td><%= f.name %></td>
 		<td><%= human_boolean(f.brunch) %></td>
 		<td><%= human_boolean(f.bus) %></td>
 		<td><%= f.diet %></td>
 	</tr>
-	<% end %>
 	<% end %>
 </table>
