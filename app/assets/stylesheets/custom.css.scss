@@ -2,10 +2,12 @@
 
 /* mixins, variables, etc. */ 
 
+$textBrown: #543512; 
 $grayMediumLight: #eaeaea; 
 
 $headerGreen: #125624;
 $mediumGreen: #125624;
+$backgroundYellow: #f6f5df;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -20,13 +22,15 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 40px;
   background-color: #f6f5df;
-  background-image: none;
+  background-image: url('sepialeaves.png');
   background-repeat: no-repeat;
   filter: none;
 }
-
+.container {
+  opacity: 1.0;
+}
 section {
   overflow: auto;
 }
@@ -87,17 +91,17 @@ p {
 }
 
 /* links */
-a:greenlink {
+a:link {
   color:#125624;
 }      
 a:visited {
-  color:#00FF00;
+  color:#125624;
 }
 a:hover {
-  color:#FF00FF;
+  color:#4f64f8;
 }
 a:active {
-  color:#0000FF;
+  color:#4f64f8;
 }
 
 /* header */
@@ -289,4 +293,6 @@ aside {
 .greentext {
       color: $headerGreen;
 }
-
+.browntext {
+  color: $textBrown;
+}

@@ -73,7 +73,7 @@ module Ccsite4
     # Enable @font-face
     config.assets.paths << "#{Rails.root}/app/assets/fonts"
     # Precompile additional assets
-    config.assets.precompile += %w( .svg .eot .woff .ttf )
+    config.assets.precompile += %w( .svg .eot .woff .ttf *.png)
     # To precompile bootstrap rather than throught the stylesheet
     #config.assets.precompile += %w( bootstrap.css )
   end

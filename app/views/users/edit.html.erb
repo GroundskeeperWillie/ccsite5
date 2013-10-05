@@ -1,12 +1,12 @@
 <% provide(:title, "Edit user") %> 
-<h3>Update Your Details</h3>
+<h3 style="color:#543512">Update Your Details</h3>
 <% if signed_in? %>
   <div class="row">
   <div class="span6 offset3 ">	
     <div class="jennasue">
     <h2 style="color:#125624"><%= @user.name %></h2>
     </div>
-    <h4 >Account Settings</h4>
+    <h4 style="color:#543512">Account Settings</h4>
   	  <%= form_for(@user) do |f| %>
  	  <%= render 'shared/error_messages', object: f.object %>
 	  <%= f.label :party %>

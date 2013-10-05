@@ -1,8 +1,8 @@
 <% provide(:title, @user.name) %>
 <div class="jennasue">
-  <h4>Carla Aumann and Chris Stewart cordially invite</h4>
-  <h2 style="color:#125624"><b><%= @user.name %></b></h2>
-  <h4>A party of <%= pluralize(@user.guests.count, "guest") %></h4>
+  <h4 class="browntext">Carla Aumann and Chris Stewart cordially invite</h4>
+  <h2 class="greentext"><b><%= @user.name %></b></h2>
+  <h4 class="browntext">A party of  <%= pluralize(@user.guests.count, "guest") %></h4>
 </div>
 <div>
 <p>
