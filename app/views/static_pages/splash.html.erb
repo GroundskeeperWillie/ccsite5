@@ -1,19 +1,20 @@
 <% provide(:title, 'Home')%>
 <% if signed_in? %>
 <div class="jennasue">
-<h1>Carla and Chris' Wedding</h1>
+<h1 style="color:#125624">Carla and Chris' Wedding</h1>
 <h3>Beautiful bride</br>
   Handsome groom</br>
   Booze, food, and bad dance moves ... </br>
   Are you in or what?</h3>
- <h3><b>Saturday 4 January 2014</b></h3>
+
+ <h3 style="color:#125624">Saturday 4 January 2014</h3>
 <p>Welcome to our wedding website where you can find all the info we otherwise</br> forgot (or will forget) to tell you, all in one convenient location.</p>
   <h2><%= link_to "peruse the details", details_path %></br>
     or</br>
   <%= link_to "rsvp now", current_user %></h2>
 <% else %>
   <h2 class="jennasue">Carla Aumann and Christopher Stewart</h2>
-  <h3 class="jennasue">Saturday 4th January 2014</h3>
+  <h3 class="jennasue">Saturday 4 January 2014</h3>
   <p>Please <%= link_to "sign in", signin_path %> for details....</p>
 <% end %>
 </div>

@@ -10,7 +10,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :email, :name, :password, :password_confirmation, :admin, :guests_attributes
+  attr_accessible :email, :name, :password, :password_confirmation, :guests_attributes
   has_secure_password
   has_many :guests, dependent: :destroy
   has_one :party

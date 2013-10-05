@@ -1,7 +1,7 @@
 <header class="navbar navbar-fixed-top navbar-inverse" class="green">
   <div class="navbar-inner green">
     <div class="container">
-      <%= link_to "Carla and Chris 2014", root_path, :id => "logo" %>
+      <%= link_to "Carla & Chris 2014", root_path, :id => "logo" %>
       <nav>
         <ul class="nav pull-right">
  		  <li><%= link_to "Home", root_path %></li>
@@ -38,7 +38,7 @@
               </a>
               <ul class="dropdown-menu">
 				<li><%= link_to "RSVP", current_user %></li>
-                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                <li><%= link_to "Edit settings", edit_user_path(current_user) %></li>
                 <li class="divider"></li>
                 <li>
                   <%= link_to "Sign out", signout_path, method: "delete" %>
