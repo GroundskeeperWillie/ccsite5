@@ -1,10 +1,10 @@
 class GuestsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy, :show, :put]
   before_filter :correct_user,   only: [:destroy, :put] 
-  before_filter :admin_user, only: :destroy
+  before_filter :admin_user, only: [:destroy]
     
   def index
-    @guests = Guest.paginate(page: params[:page])
+    @guests = Guest.paginate(page: params[:page], per_page: 5)
   end
   
   def create

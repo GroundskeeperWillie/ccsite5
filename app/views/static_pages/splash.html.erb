@@ -7,14 +7,19 @@
   Booze, food, and bad dance moves ... </br>
   Are you in or what?</h3>
 
- <h3 style="color:#125624">Saturday 4 January 2014</h3>
-<p>Welcome to our wedding website where you can find all the info we otherwise</br> forgot (or will forget) to tell you, all in one convenient location.</p>
+ <h3 class="greentext">Saturday 4 January 2014</h3>
+</div>
+<h5>Welcome to our wedding website where you can find all the info we otherwise</br> forgot (or will forget) to tell you, all in one convenient location.</h5>
+<div >
   <h2 class="browntext"><%= link_to "peruse the details", details_path %></br>
     or</br>
   <%= link_to "rsvp now", current_user %></h2>
+ </div>
 <% else %>
-  <h2 class="jennasue">Carla Aumann and Christopher Stewart</h2>
-  <h3 class="jennasue">Saturday 4 January 2014</h3>
-  <p>Please <%= link_to "sign in", signin_path %> for details....</p>
+<div class="jennasue">
+  <h2 class="greentext">Carla Aumann and Christopher Stewart</h2>
+  <h3 class="browntext">Saturday 4 January 2014</h3>
+</div>
+  <h4>Please <%= link_to "sign in", signin_path %> for details....</h4>
 <% end %>
 </div>

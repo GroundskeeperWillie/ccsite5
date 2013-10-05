@@ -1,38 +1,23 @@
-<h2>In total you've invited <%= @guests.count %> people:</h2>
+
+<h2 class="browntext">In total you've invited <%= @guests.count %> people:</h2>
+<h4 class="greentext">A total of <%= pluralize(@guests.where(wedding: nil).count, "guest") %> have not yet responded.</h4>
+<h4 class="greentext">A total of <%= pluralize(@guests.where(wedding: false).count, "guest") %> are not attending.</h4>
 <table class="table">
-    <tr><h3>Attending (<%= @guests.where(wedding: true).count %>)</h3></tr>
+    <tr><h3 class="greentext">Attending (<%= @guests.where(wedding: true).count %>)</h3></tr>
 		<th>Guest</th>
 		<th>Brunch</th>
 		<th>Bus</th>
 		<th>Dietary Restrictions</th>
+	</tr>
+	<%= will_paginate %>
 	<% @guests.each do |f| %>
 	<% if f.wedding == true %>
-		<tr>
+	<tr>
 		<td><%= f.name %></td>
 		<td><%= human_boolean(f.brunch) %></td>
 		<td><%= human_boolean(f.bus) %></td>
 		<td><%= f.diet %></td>
 	</tr>
 	<% end %>
-	<% end %>
-</table>
-<table class="table">
-    <tr><h3>Not Attending (<%= @guests.where(wedding: false).count %>)</h3></tr>
-	<% @guests.each do |f| %>
-	<tr>
-	  <% if f.wedding == false %>
-		<td><%= f.name %></td>
-	  <% end %>
-	</tr>
-	<% end %>
-</table>
-<table class="table">
-    <tr><h3>Too Bone Arse Lazy to Respond Yet (<%= @guests.where(wedding: nil).count %>)</h3></tr>
-	<% @guests.each do |f| %>
-	<tr>
-	  <% if f.wedding == nil %>
-		<td><%= f.name %></td>
-	  <% end %>
-	</tr>
 	<% end %>
 </table>

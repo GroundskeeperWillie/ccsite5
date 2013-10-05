@@ -4,6 +4,7 @@
 
 $textBrown: #543512; 
 $grayMediumLight: #eaeaea; 
+$helveticaNeueLight: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
 $headerGreen: #125624;
 $mediumGreen: #125624;
@@ -23,6 +24,7 @@ html {
 
 body {
   padding-top: 40px;
+  padding-left: 20px;
   background-color: #f6f5df;
   background-image: url('sepialeaves.png');
   background-repeat: no-repeat;
@@ -82,17 +84,30 @@ h4 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color: $textBrown;
+}
+h5 {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $textBrown;
+  font-family: $helveticaNeueLight;
+  font-weight: 300;
 }
 p {
   font-size: 1.1em;
   line-height: 1.7em;
   text-align:center;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
 }
 
 /* links */
 a:link {
   color:#125624;
+  font-weight: 400;
 }      
 a:visited {
   color:#125624;
@@ -117,6 +132,8 @@ a:active {
 
 .navbar .nav > li > a {
   color: #f6f5df;
+  font-family: $helveticaNeueLight;
+  font-weight: 300; 
 }
 
 #logo {
@@ -266,7 +283,8 @@ aside {
 }
 /* block text */
 .blocktext {
-  text-align: left;
+  text-align: justify;
+
 }
 .littletext {
   font-size: 12px;
@@ -296,3 +314,33 @@ aside {
 .browntext {
   color: $textBrown;
 }
+
+/* Pagination */
+
+.apple_pagination {
+  background: #f1f1f1;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 1em;
+  cursor: default; }
+  .apple_pagination a, .apple_pagination span {
+    padding: 0.2em 0.3em; }
+  .apple_pagination .disabled {
+    color: #aaaaaa; }
+  .apple_pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background-color: #bebebe;
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.5;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-radius: 1em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px 1px 1px; }
+  .apple_pagination a {
+    text-decoration: none;
+    color: black; }
+    .apple_pagination a:hover, .apple_pagination a:focus {
+      text-decoration: underline; }
