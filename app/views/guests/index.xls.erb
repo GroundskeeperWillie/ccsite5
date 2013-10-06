@@ -1,6 +1,7 @@
 <table class="table">
     <tr class="greentext"></tr>
 		<th>Guest</th>
+		<th>Wedding</th>
 		<th>Brunch</th>
 		<th>Bus</th>
 		<th>Dietary Restrictions</th>
@@ -8,6 +9,7 @@
 	<% @guests.each do |f| %>	
 	<tr>
 		<td><%= f.name %></td>
+		<td><%= human_boolean(f.wedding) %></td>
 		<td><%= human_boolean(f.brunch) %></td>
 		<td><%= human_boolean(f.bus) %></td>
 		<td><%= f.diet %></td>

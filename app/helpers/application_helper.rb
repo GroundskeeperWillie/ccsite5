@@ -4,9 +4,9 @@ module ApplicationHelper
   def full_title(page_title)
     base_title = "Carla and Chris 2014"
     if page_title.empty?
-      base_title
+      base_title.html_safe
     else
-      "#{base_title} | #{page_title}"
+      "#{base_title} | #{page_title}".html_safe
     end
   end
 
