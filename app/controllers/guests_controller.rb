@@ -4,7 +4,7 @@ class GuestsController < ApplicationController
   before_filter :admin_user, only: [:destroy]
     
   def index
-    @guests = Guest.paginate(page: params[:page], per_page: 25)
+    @guests = Guest.paginate(page: params[:page], per_page: 10)
     respond_to do |format|
       format.html
       format.csv { send_data @guests.to_csv }
