@@ -11,8 +11,6 @@
 		<th>Brunch</th>
 		<th>Bus</th>
 		<th>Dietary Restrictions</th>
-		<th>Delete?<th>
-		
 	</tr>
 	<%= will_paginate %>
 	<% @guests.each do |f| %>	
@@ -22,9 +20,6 @@
 		<td><%= human_boolean(f.brunch) %></td>
 		<td><%= human_boolean(f.bus) %></td>
 		<td><%= f.diet %></td>
-		<td><%= f.delete %></td>
-
-
 	</tr>
 	<% end %>
 </table>
