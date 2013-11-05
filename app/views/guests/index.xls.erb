@@ -5,6 +5,7 @@
 		<th>Brunch</th>
 		<th>Bus</th>
 		<th>Dietary Restrictions</th>
+		
 	</tr>
 	<% @guests.each do |f| %>	
 	<tr>
@@ -13,6 +14,8 @@
 		<td><%= human_boolean(f.brunch) %></td>
 		<td><%= human_boolean(f.bus) %></td>
 		<td><%= f.diet %></td>
+		
+		
 	</tr>
 	<% end %>
 </table>

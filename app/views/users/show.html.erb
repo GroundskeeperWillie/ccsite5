@@ -11,29 +11,30 @@ Kindly RSVP by checking the appropriate boxes below.  If you'll be joining us, p
     <%= form_for @user do |f| %>
       <table class="table">
           <tr>
-            <td class="span3">Guest</td>
-            <td class="span2">Wedding</td>
-            <td class="span2">Brunch</td>
-            <td class="span2">Bus</td>
-            <td class="span3">Dietary restrictions</td>
+            <th class="span3">Guest</th>
+            <th class="span2">Wedding</th>
+            <th class="span2">Brunch</th>
+            <th class="span2">Bus</th>
+            <th class="span3">Dietary restrictions</th>
           </tr>
           <%= f.fields_for :guests do |builder| %>
           <tr>
             <td><%= builder.text_field :name, placeholder: "Guest name" %></td>
             <td>
-              <%= builder.select(:wedding, [['Count me in!', true], ['Sadly, no', false]], {}, class: "dropdownform") %>
+              <%= builder.select(:wedding, [['', nil],['Count me in!', true], ['Sadly, no', false]], {}, class: "dropdownform") %>
             </td>
             <td>
-              <%= builder.select(:brunch, [['Yes please!', true], ['No thanks', false]], {}, class: "dropdownform") %>
+              <%= builder.select(:brunch, [['', nil],['Yes please!', true], ['No thanks', false]], {}, class: "dropdownform") %>
             </td>
             <td>
-              <%= builder.select(:bus, [['Yes please!', true], ['No thanks', false]], {}, class: "dropdownform") %>
+              <%= builder.select(:bus, [['', nil],['Yes please!', true], ['No thanks', false]], {}, class: "dropdownform") %>
             </td>
             <td><%= builder.text_field :diet, placeholder: "Dietary fussiness" %></td>
+            
           </tr>
         <% end %>
       </table>
-      <%= f.submit "update", class: "btn btn-large btn-primary"  %>
+      <%= f.submit "RSVP or update", class: "btn btn-large btn-primary"  %>
     <% end %>
   </div>
 </div>
