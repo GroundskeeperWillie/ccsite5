@@ -8,6 +8,10 @@ class Guest < ActiveRecord::Base
   
   default_scope order(:name)
 
+  #scope :true, where(wedding: true)
+  #scope :false, where(wedding: false)
+  #scope :nil, where(wedding: nil)
+
 
 
 def self.to_csv(options = {})
