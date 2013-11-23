@@ -1,5 +1,5 @@
 
-<h2 class="browntext">In total you've invited <%= @guests.count %> people</h2>
+<h2 class="browntext">In total you've invited <%= @guests_all.count %> people</h2>
 <div class="span5">
 <table class="table textcenter">
   <tr>
@@ -8,9 +8,9 @@
 	<th class="greentext">Unresponsive</th>
   </tr>
   <tr>
-  	<td><%= @guests.where(wedding: true).count %></td>
-  	<td><%= @guests.where(wedding: false).count %></td>
-  	<td><%= @guests.where(wedding: nil).count %></td>
+  	<td><%= @guests_all.where(wedding: true).count %></td>
+  	<td><%= @guests_all.where(wedding: false).count %></td>
+  	<td><%= @guests_all.where(wedding: nil).count %></td>
   </tr>
 </table>
 <h5 class="browntext">Download the guest list: <%= link_to "CSV", guests_path(format: "csv") %> | <%= link_to "Excel", guests_path(format: "xls", page: params[:page]) %> </h5>

@@ -1,6 +1,7 @@
 class GuestsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy, :show, :put, :index]
   before_filter :correct_user,   only: [:destroy, :put] 
+  before_filter :admin, only: [:create, :destroy]
   
     
   def index
@@ -8,6 +9,7 @@ class GuestsController < ApplicationController
     #@guests = Guest.paginate(page: params[:page], per_page: 25)
     @search = Guest.search(params[:q])
     @guests = @search.result
+    @guests_all = Guest.paginate(page: params[:page])
     #@guests = @guests.select { |v| v.wedding_id == params[:wedding] } if !params[:guest_wedding].blank?
     #@guests = Guest.where("wedding LIKE ?", "%#{params[:search]}%")
 
