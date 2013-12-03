@@ -1,7 +1,7 @@
 class GuestsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :destroy, :show, :put, :index]
   before_filter :correct_user,   only: [:destroy, :put] 
-  before_filter :admin, only: [:create, :destroy]
+  
   
     
   def index
