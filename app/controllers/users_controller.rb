@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index, :edit, :update, :destroy]
   before_filter :correct_user, only: [:edit, :update]
-  before_filter :admin_user, only: [:destroy, :create]
+  before_filter :admin_user, only: [:create, :destroy]
   
   def new
     @user = User.new
@@ -15,9 +15,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      sign_in @user
+      #sign_in @user
       flash[:success]  = "You've successfully added a guest!"
-      redirect_to @user
+      #redirect_to @user
+      redirect_to users_path
     else
       render 'new'
     end

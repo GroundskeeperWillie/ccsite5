@@ -24,8 +24,8 @@
 	  <td></td>
 	  <td><h3 class="greentext span1 rightalign">Filter</h3></td>
 	  <%= search_form_for @search do |f| %>
-	  <td><div class="dropdownlist span3">
-		<%= f.select :wedding_eq, options_for_select([['All Guests', ''],['Confirmed attending', true], ['Not attending', false]], :selected => :wedding) %>
+	  <td><div>
+		<%= f.select :wedding_eq, options_for_select([['All Guests', ''],['Confirmed attending', true], ['Not attending', false]], :selected => :wedding, class: "dropdownform") %>
 		<td><%= f.submit "Filter", class: "btn btn-medium btn-primary"  %></td>
 	</tr>
 	<% end %>
@@ -35,6 +35,7 @@
 <table class="table">
     <tr>
 		<th><%= sort_link @search, :name, "Guest" %></th>
+		<th><%= sort_link @search, :user, "Party" %></th>
 		<th><%= sort_link @search, :wedding, "RSVP" %></th>
 		<th><%= sort_link @search, :brunch, "Brunch" %></th>
 		<th><%= sort_link @search, :bus, "Bus" %></th>
@@ -45,6 +46,7 @@
 	
 	<tr>
 		<td><%= b.name %></td>
+		<td><%= b.user.name %></td>
 		<td><%= human_boolean(b.wedding) %></td>
 		<td><%= human_boolean(b.brunch) %></td>
 		<td><%= human_boolean(b.bus) %></td>
